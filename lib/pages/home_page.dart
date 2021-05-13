@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
     final String name = "NitroTechie";
     return Scaffold(
       appBar: AppBar(
-        title: Text("NitroTechie"),
+        title: Text("Catalog App"),
         centerTitle: true,
       ),
       body: Center(
