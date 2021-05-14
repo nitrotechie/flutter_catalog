@@ -12,7 +12,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -31,7 +33,7 @@ class HomeDetailPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  "Buy",
+                  "Add to Cart",
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -84,6 +86,15 @@ class HomeDetailPage extends StatelessWidget {
                         fontStyle: FontStyle.values[1],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "dataSadipscing et ipsum lorem gubergren dolor consetetur. Takimata no kasd voluptua duo, nonumy et sit eirmod rebum diam sed, et dolor dolor tempor sit et sit, dolor gubergren kasd sed et rebum magna dolores duo, et sed sea sanctus kasd dolor kasd, sed gubergren kasd amet sit et kasd ea.",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
