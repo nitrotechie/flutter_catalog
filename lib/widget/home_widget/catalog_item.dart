@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/cart.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-
+import 'package:velocity_x/velocity_x.dart';
 import 'catalog_image.dart';
 
 class CatalogItem extends StatelessWidget {
@@ -67,21 +69,47 @@ class CatalogItem extends StatelessWidget {
                             color: Theme.of(context).accentColor,
                           ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Add to Cart"),
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all(StadiumBorder()),
-                              backgroundColor: MaterialStateProperty.all(
-                                Theme.of(context).buttonColor,
-                              )),
-                        )
+                        _AddToCart(catalog: catalog)
                       ],
                     )
                   ],
                 ),
               ),
             ],
+          )),
+    );
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item catalog;
+  const _AddToCart({
+    Key key,
+    this.catalog,
+  }) : super(key: key);
+
+  @override
+  __AddToCartState createState() => __AddToCartState();
+}
+
+class __AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+        _cart.catalog = _catalog;
+        _cart.add(widget.catalog);
+        setState(() {});
+      },
+      child: isAdded ? Icon(Icons.done) : Text("Add to Cart"),
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(StadiumBorder()),
+          backgroundColor: MaterialStateProperty.all(
+            Theme.of(context).buttonColor,
           )),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/cart.dart';
 
 class CartPage extends StatelessWidget {
   @override
@@ -27,7 +28,13 @@ class CartPage extends StatelessWidget {
   }
 }
 
-class _CartTotal extends StatelessWidget {
+class _CartTotal extends StatefulWidget {
+  @override
+  __CartTotalState createState() => __CartTotalState();
+}
+
+class __CartTotalState extends State<_CartTotal> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -36,7 +43,7 @@ class _CartTotal extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
-            "Total: \$900",
+            "Total :  \$${_cart.totalPrice}",
             style: TextStyle(
               color: Theme.of(context).accentColor,
               fontWeight: FontWeight.bold,
@@ -78,10 +85,11 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: _cart.items?.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.done),
         trailing: IconButton(
@@ -89,7 +97,7 @@ class __CartListState extends State<_CartList> {
           onPressed: () {},
         ),
         title: Text(
-          "Item 1",
+          _cart.items[index].name,
           style: TextStyle(
             color: Theme.of(context).accentColor,
           ),
