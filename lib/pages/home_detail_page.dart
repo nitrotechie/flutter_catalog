@@ -15,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -26,6 +26,7 @@ class HomeDetailPage extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
+                color: Theme.of(context).accentColor,
               ),
             ),
             ElevatedButton(
@@ -42,7 +43,7 @@ class HomeDetailPage extends StatelessWidget {
               style: ButtonStyle(
                   shape: MaterialStateProperty.all(StadiumBorder()),
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
+                    Theme.of(context).buttonColor,
                   )),
             )
           ],
@@ -63,7 +64,7 @@ class HomeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: Theme.of(context).cardColor,
                 width: context.screenWidth,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,6 +77,7 @@ class HomeDetailPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                     Text(
@@ -84,6 +86,7 @@ class HomeDetailPage extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.w100,
                         fontStyle: FontStyle.values[1],
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                     Padding(

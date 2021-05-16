@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class CatalogImage extends StatelessWidget {
   final String image;
 
@@ -15,7 +13,7 @@ class CatalogImage extends StatelessWidget {
       height: 120,
       padding: EdgeInsets.all(1),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).canvasColor,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Image.network(image),

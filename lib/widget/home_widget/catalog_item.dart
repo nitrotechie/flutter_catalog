@@ -19,15 +19,21 @@ class CatalogItem extends StatelessWidget {
           height: 125,
           width: 125,
           decoration: BoxDecoration(
-            color: Colors.white,
-          ),
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(20)),
           child: Row(
             children: [
               Hero(
                 tag: Key(catalog.id.toString()),
-                child: CatalogImage(
-                  image: catalog.image,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: CatalogImage(
+                    image: catalog.image,
+                  ),
                 ),
+              ),
+              SizedBox(
+                width: 5,
               ),
               Expanded(
                 child: Column(
@@ -39,6 +45,7 @@ class CatalogItem extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                     Text(
@@ -47,6 +54,7 @@ class CatalogItem extends StatelessWidget {
                         fontSize: 12,
                         fontWeight: FontWeight.w100,
                         fontStyle: FontStyle.values[1],
+                        color: Theme.of(context).accentColor,
                       ),
                     ),
                     ButtonBar(
@@ -57,6 +65,7 @@ class CatalogItem extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
+                            color: Theme.of(context).accentColor,
                           ),
                         ),
                         ElevatedButton(
@@ -65,7 +74,7 @@ class CatalogItem extends StatelessWidget {
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all(StadiumBorder()),
                               backgroundColor: MaterialStateProperty.all(
-                                MyTheme.darkBluishColor,
+                                Theme.of(context).buttonColor,
                               )),
                         )
                       ],

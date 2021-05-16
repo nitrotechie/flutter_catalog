@@ -5,6 +5,10 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.indigo,
       fontFamily: GoogleFonts.poppins().fontFamily,
+      cardColor: Colors.white,
+      canvasColor: creamColor,
+      buttonColor: darkBluishColor,
+      accentColor: darkBluishColor,
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0,
@@ -16,10 +20,26 @@ class MyTheme {
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-        brightness: Brightness.dark,
-      );
+      brightness: Brightness.dark,
+      primarySwatch: Colors.indigo,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      cardColor: Colors.black,
+      canvasColor: darkcreamColor,
+      buttonColor: ligthBluishColor,
+      accentColor: Colors.white,
+      appBarTheme: AppBarTheme(
+        color: Colors.black,
+        elevation: 0,
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        textTheme: Theme.of(context).textTheme,
+      ));
 
   // Colors
   static Color creamColor = Color(0xfff5f5f5);
+  static Color darkcreamColor = Colors.grey[900];
   static Color darkBluishColor = Color(0xff403b58);
+  static Color ligthBluishColor = Colors.indigoAccent;
 }
